@@ -1,0 +1,9 @@
+<aura:component controller="CreditCheckController" implements="force:appHostable,flexipage:availableForRecordHome,force:lightningQuickAction,force:hasRecordId">
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="caseForm" type="Case" default="{'sobjectType':'Case', 'Status':'New'}"/>
+    <lightning:recordEditForm objectApiName="Case">
+        <lightning:inputField fieldName="Credit_Check_Status__c" aura:id="creditCheckStatus"/>
+        <lightning:button label="Save" onclick="{!c.saveCase_Rec}" class="slds-m-top--medium"/>
+        <lightning:button label="Cancel" onclick="{!c.handleCancel}" class="slds-m-top--medium"/>
+    </lightning:recordEditForm>
+</aura:component>
